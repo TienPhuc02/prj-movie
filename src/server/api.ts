@@ -13,6 +13,9 @@ export const callListMoviePopular = (page: number) => {
     `movie/popular?api_key=60b543782a96ada8877d99963921d3c8&page=${page}`
   );
 };
+export const callListMoviePopularHome = () => {
+  return axios.get(`movie/popular?api_key=60b543782a96ada8877d99963921d3c8`);
+};
 export const callListMovieUpcoming = () => {
   return axios.get("movie/upcoming?api_key=60b543782a96ada8877d99963921d3c8");
 };

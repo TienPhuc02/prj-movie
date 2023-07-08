@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import { callListMoviePopular } from "../../../server/api";
 import { Swiper, SwiperSlide } from "swiper/react";
 import MovieCard from "./MovieCard";
+import { callListMoviePopularHome } from "../../../server/api";
 interface MovieTrendingType {
   id: number;
   title: string;
@@ -12,7 +12,7 @@ interface MovieTrendingType {
 const MovieListTrending = () => {
   const [listMovieTrending, setListMovieTrending] = useState<[]>([]);
   const getAllListMovieTrending = async () => {
-    const res = await callListMoviePopular();
+    const res = await callListMoviePopularHome();
     if (res && res.data && res.data.results) {
       setListMovieTrending(res.data.results);
     }
